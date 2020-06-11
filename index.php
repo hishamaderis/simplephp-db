@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
 <?php>
 echo "<table><tr><th>ID</th><th>Name</th></tr>";
   // output data of each row
@@ -5,3 +16,6 @@ echo "<table><tr><th>ID</th><th>Name</th></tr>";
   }
   echo "</table>";
 <?>
+
+</body>
+</html>
