@@ -1,3 +1,3 @@
 <?php>
-simplephp-db
+echo "My new index for simplephp"  
 <?>
