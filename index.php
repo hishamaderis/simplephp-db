@@ -1,3 +1,3 @@
 <?php>
-This is my simple php script
+simplephp-db
 <?>
