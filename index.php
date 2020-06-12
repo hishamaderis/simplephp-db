@@ -1,7 +1,4 @@
-<!--
-<!DOCTYPE html>
 <html>
-    <h1> This is SPARTA</h1>
 <head>
 <style>
 table, th, td {
@@ -11,47 +8,88 @@ table, th, td {
 </head>
 <body>
 
-<?php>
-echo "<table><tr><th>ID</th><th>Name</th></tr>";
-echo "<tr><td>""</td><td>""</td></tr>";
-  }
-  echo "</table>";
-<?>
+<h2>Justice League</h2>
 
-</body>
-</html>
--->
-    
-<html>
-<body>
-
-<h2>Basic HTML Table</h2>
-
-<table style="width:100%">
+<table>
   <tr>
     <th>Firstname</th>
     <th>Lastname</th> 
-    <th>Age</th>
+    <th>Alter Ego</th>
   </tr>
   <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
+    <td>Clark</td>
+    <td>Kent</td>
+    <td>Superman</td>
   </tr>
   <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
+    <td>Bruce</td>
+    <td>Wayne</td>
+    <td>Batman</td>
   </tr>
   <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
+    <td>Diana</td>
+    <td>Prince</td>
+    <td>Wonder Woman</td>
+  </tr>
+  <tr>
+    <td>Barry</td>
+    <td>Allen</td>
+    <td>The Flash</td>
+  </tr>
+  <tr>
+    <td>Hal</td>
+    <td>Jordan</td>
+    <td>Green Lantern</td>
+  </tr>
+  <tr>
+    <td>Arthur</td>
+    <td>Curry</td>
+    <td>Aquaman</td>
   </tr>
 </table>
 
 </body>
 </html>
 
-    
+<!--
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<?php
+$servername = "172.17.0.3";
+$username = "spuser";
+$password = "1234";
+$dbname = "spdb";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT firstname, lastname, age FROM staff";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table><tr><th>FirstName</th><th>LastName</th><th>Age</th></tr>";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td> " . $row["age"]. "</td></tr>";
+    }
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+</body>
+</html>
+-->
