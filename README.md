@@ -9,7 +9,7 @@ docker run -dit -v "$PWD":/var/www/html -p 8080:80 --name myphp php:apache
 # Check by browsing localhost:8080
 
 # Install mysqli if not available in php:apache container
-docker exec -dit myphp bash
+docker exec -it myphp bash
 install mysqli: docker-php-ext-install mysqli
 apachectl restart
 
@@ -17,7 +17,7 @@ apachectl restart
 docker run -dit -v "$PWD":/mnt --env-file mariadb-env --name mydb mariadb
 
 # Import data 
-docker exec -dit mydb bash
+docker exec -it mydb bash
 ip a
 mysql -u spuser -p spdb ip.add.re.ss < data.sql
 
