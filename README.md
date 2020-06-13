@@ -9,6 +9,7 @@ docker run -dit -v "$PWD":/var/www/html -p 8080:80 --name myphp php:apache
 # Check by browsing localhost:8080
 
 # Install mysqli if not available in php:apache container
+# Error: Fatal error: Uncaught Error: Class 'mysqli' not found in /var/www/html/index.php:18 Stack trace: #0 {main} thrown in /var/www/html/index.php on line 18
 docker exec -it myphp bash
 install mysqli: docker-php-ext-install mysqli
 apachectl restart
