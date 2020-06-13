@@ -19,7 +19,7 @@ docker run -dit -v "$PWD":/mnt --env-file mariadb-env --name mydb mariadb
 # Import data 
 docker exec -it mydb bash
 ip a
-mysql -u spuser -p spdb ip.add.re.ss < data.sql
+mysql -u spuser -p -h ip.add.re.ss spdb < data.sql
 
 # Change index.php to use index.php.withdb
 mv index.php index.php.0
